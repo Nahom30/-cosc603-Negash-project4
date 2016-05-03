@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../../../.resources/report.css" type="text/css"/><link rel="shortcut icon" href="../../../.resources/report.gif" type="image/gif"/><title>Inventory.java</title><link rel="stylesheet" href="../../../.resources/prettify.css" type="text/css"/><script type="text/javascript" src="../../../.resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../../../.sessions.html" class="el_session">Sessions</a></span><a href="../../../index.html" class="el_report">edu.towson.cis.cosc603.project5.coffeemaker (Apr 27, 2016 6:52:13 PM)</a> &gt; <a href="../../index.html" class="el_group">CoffeeMaker</a> &gt; <a href="../index.html" class="el_bundle">src</a> &gt; <a href="index.source.html" class="el_package">edu.towson.cis.cosc603.project5.coffeemaker</a> &gt; <span class="el_source">Inventory.java</span></div><h1>Inventory.java</h1><pre class="source lang-java linenums">// $codepro.audit.disable
+package edu.towson.cis.cosc603.project5.coffeemaker;
+
+/**
+ * Inventory for the coffee maker
+ * @author Josh
+ * @version $Revision: 1.0 $
+ */
+public class Inventory {
+    
+    private static int coffee;
+    private static int milk;
+    private static int sugar;
+    private static int chocolate;
+    
+<span class="fc" id="L16">    public Inventory() {</span>
+<span class="fc" id="L17">    	setCoffee(15);</span>
+<span class="fc" id="L18">    	setMilk(15);</span>
+<span class="fc" id="L19">    	setSugar(15);</span>
+<span class="fc" id="L20">    	setChocolate(15);</span>
+<span class="fc" id="L21">    }</span>
+    
+    /**
+     * Method getChocolate.
+     * @return int
+     */
+    public int getChocolate() {
+<span class="fc" id="L28">        return chocolate;</span>
+    }
+    /**
+     * Method setChocolate.
+     * @param chocolate int
+     */
+    public void setChocolate(int chocolate) {
+<span class="fc" id="L35">    	Inventory.chocolate = chocolate;</span>
+        
+<span class="fc" id="L37">    }</span>
+    /**
+     * Method getCoffee.
+     * @return int
+     */
+    public int getCoffee() {
+<span class="fc" id="L43">        return coffee;</span>
+    }
+    /**
+     * Method setCoffee.
+     * @param coffee int
+     */
+    public void setCoffee(int coffee) {
+<span class="fc" id="L50">    	Inventory.coffee = coffee;</span>
+<span class="fc" id="L51">    }</span>
+    /**
+     * Method getMilk.
+     * @return int
+     */
+    public int getMilk() {
+<span class="fc" id="L57">        return milk;</span>
+    }
+    /**
+     * Method setMilk.
+     * @param milk int
+     */
+    public void setMilk(int milk) {
+<span class="fc" id="L64">    	Inventory.milk = milk;</span>
+<span class="fc" id="L65">    }</span>
+    /**
+     * Method getSugar.
+     * @return int
+     */
+    public int getSugar() {
+<span class="fc" id="L71">        return sugar;</span>
+    }
+    /**
+     * Method setSugar.
+     * @param sugar int
+     */
+    public void setSugar(int sugar) {
+<span class="fc" id="L78">    		Inventory.sugar = sugar;</span>
+<span class="fc" id="L79">    }</span>
+    
+    /**
+     * Returns true if there are enough ingredients to make
+     * the beverage.
+     * @param r
+    
+     * @return boolean */
+    public boolean enoughIngredients(Recipe r) {
+<span class="fc" id="L88">        boolean isEnough = true;</span>
+<span class="pc bpc" id="L89" title="4 of 8 branches missed.">        if(Inventory.coffee &lt; r.getAmtCoffee()|| Inventory.milk &lt; r.getAmtMilk()|| Inventory.sugar &lt; r.getAmtSugar()|| Inventory.chocolate &lt; r.getAmtChocolate()) {</span>
+<span class="nc" id="L90">            isEnough = false;</span>
+        }
+<span class="fc" id="L92">        return isEnough;</span>
+    }
+    
+    /**
+     * Method toString.
+     * @return String
+     */
+    public String toString() {
+<span class="fc" id="L100">    	return &quot;Coffee: &quot; + getCoffee() + </span>
+<span class="fc" id="L101">			&quot;Milk: &quot; + getMilk() + </span>
+<span class="fc" id="L102">			&quot;Sugar: &quot; + getSugar() + </span>
+<span class="fc" id="L103">			&quot;Chocolate: &quot; + getChocolate() ;</span>
+    }
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.eclemma.org/jacoco">JaCoCo</a> 0.7.6.201602180812</span>edu.towson.cis.cosc603.project5.coffeemaker (Apr 27, 2016 6:52:13 PM)</div></body></html>
